@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Examples</string>
+    <string name="coroutines">Coroutines</string>
+    <string name="update_counter">Update Counter</string>
+    <string name="_0">0</string>
+    <string name="runlongrunningtask">runLongRunningTask</string>
+    <string name="runlongrunningtaskwiththread">runLongRunningTaskWithThread</string>
+    <string name="runlongrunningtaskwithcoroutines">runLongRunningTaskWithCoroutines</string>
+</resources>
