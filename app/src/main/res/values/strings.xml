@@ -6,4 +6,6 @@
     <string name="runlongrunningtask">runLongRunningTask</string>
     <string name="runlongrunningtaskwiththread">runLongRunningTaskWithThread</string>
     <string name="runlongrunningtaskwithcoroutines">runLongRunningTaskWithCoroutines</string>
+    <string name="save">Save</string>
+    <string name="room_database">Room Database</string>
 </resources>

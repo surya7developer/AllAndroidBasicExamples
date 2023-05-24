@@ -1,8 +1,9 @@
-package com.example.coroutines
+package com.example.Coroutines
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.databinding.ActivityMainBinding
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -26,7 +27,7 @@ class CoroutinesActivity : AppCompatActivity() {
     }
 
     @OptIn(DelicateCoroutinesApi::class)
-    fun runLongRunningTaskWithCoroutines() {
+    fun runLongRunningTaskWithCoroutines(view: View) {
 
         GlobalScope.launch {
 
@@ -39,7 +40,7 @@ class CoroutinesActivity : AppCompatActivity() {
         }
     }
 
-    fun runLongRunningTaskWithThread() {
+    fun runLongRunningTaskWithThread(view:View) {
         thread(start = true){
             Log.d(TAG, "Thread Name runLongRunningTaskWithThread : ${Thread.currentThread().name}")
 
@@ -50,7 +51,7 @@ class CoroutinesActivity : AppCompatActivity() {
         }
     }
 
-    fun runLongRunningTask() {
+    fun runLongRunningTask(view:View) {
         Log.d(TAG, "Thread Name runLongRunningTask : ${Thread.currentThread().name}")
 
         for (i in 1..1000000){
@@ -58,7 +59,7 @@ class CoroutinesActivity : AppCompatActivity() {
     }
 
     @SuppressLint("SetTextI18n")
-    fun updateCounter() {
+    fun updateCounter(view:View) {
         binding.apply {
             txtCount.text =  "${txtCount.text.toString().toInt() + 1}"
         }

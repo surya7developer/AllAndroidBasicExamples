@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".HomeActivity">
 
     <Button
@@ -11,7 +12,15 @@
         android:textSize="20sp"
         android:textAllCaps="false"
         android:text="@string/coroutines"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"/>
+
+    <Button
+        android:onClick="openRoomDatabase"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:text="@string/room_database"
+        android:layout_width="300dp"
         android:layout_height="50dp"/>
 
 </LinearLayout>
