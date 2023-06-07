@@ -1,16 +1,15 @@
 package com.example.RoomDatabase
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.room.Room
-import com.example.databinding.ActivityRoomLoginPageBinding
 import com.example.RoomDatabase.adapter.UserListAdapter
 import com.example.RoomDatabase.database.ContactDatabase
 import com.example.RoomDatabase.entities.Contact
+import com.example.databinding.ActivityRoomLoginPageBinding
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -24,23 +23,17 @@ class RoomLoginPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding =  ActivityRoomLoginPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        database = ContactDatabase.getDatabase(this)
 
-        database = Room.databaseBuilder(
-            applicationContext,
-            ContactDatabase::class.java,
-            "contactDB")
-            .build()
-
-
-        database.contactDou().getContacts().observe(this, Observer {
+        database.contactDou().getContacts().observe(this) {
             binding.apply {
                 dataList = it
                 binding.btnDeleteAll.isEnabled = it.isNotEmpty()
-                binding.rcUserList.adapter =  UserListAdapter(it)
+                binding.rcUserList.adapter = UserListAdapter(it)
             }
 
 
-        })
+        }
     }
 
     fun saveData(view: View) {
